@@ -20,9 +20,9 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - uses: mr-smithers-excellent/docker-build-push@v1.0
-          with:
-            image: bowniewk/dotnetcore-wk-example
-            dockerfile: dotnetcore/.devcontainer/Dockerfile
-            registry: docker.io
-            username: ${{ secrets.DOCKER_USERNAME }}
-            password: ${{ secrets.DOCKER_PASSWORD }}
+      with:
+        image: bowniewk/dotnetcore-wk-example
+        dockerfile: dotnetcore/.devcontainer/Dockerfile
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
