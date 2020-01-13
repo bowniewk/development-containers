@@ -1,0 +1,17 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the dotnetcore Docker image
+      run: docker build . --file dotnetcore/Dockerfile --tag dotnetcore-wk-example:$(date +%s)
+
+    - name: Build the python Docker image
+      run: docker build . --file python/Dockerfile --tag python-wk-example:$(date +%s)
