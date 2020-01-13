@@ -11,8 +11,10 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       
-    - name: GitHub Action for Build
-      uses: buildtool/build-action@v1
+    - uses: mr-smithers-excellent/docker-build-push@v1.0
       with:
-        # specify Dockerfile to use
+        image: bowniewk/python-wk-example
         dockerfile: python/Dockerfile
+        registry: docker.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
